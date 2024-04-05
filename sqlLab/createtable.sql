@@ -1,12 +1,15 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  quakedate date,
-  quaketime time with time zone,
+  quatetime datetime,
   latitude real,
   longitude real,
-  quakedepth real,
+  depth real,
   mag real,
+  magtype text,
   id text,
+  updated datetime,
   place text,
-  quaketype text
+  hzlerror real,
+  deperror real,
+  magerror real
 );
