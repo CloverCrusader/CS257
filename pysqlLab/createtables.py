@@ -11,7 +11,7 @@ conn = psycopg2.connect(
       print( "Connection Worked!" )
   else:
       print( "Problem with Connection" )
-      return
+      return None
       
 cur = conn.cursor()
 
@@ -19,4 +19,4 @@ sql = "DROP TABLE IF EXISTS statepopulation; CREATE TABLE statepopulation (code 
     
 cur.execute( sql )
 
-return
+return None
