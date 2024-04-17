@@ -7,11 +7,11 @@ conn = psycopg2.connect(
         user="rapaczs",
         password="chip979bond")
 
-  if conn is not None:
-          print( "Connection Worked!" )
-  else:
-          print( "Problem with Connection" )
-          return None
+if conn is not None:
+        print( "Connection Worked!" )
+else:
+        print( "Problem with Connection" )
+        return None
       
 cur = conn.cursor()
 
