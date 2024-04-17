@@ -9,7 +9,7 @@ def test_connection():
     
     conn = psycopg2.connect(
         host="localhost",
-        port=9999,   
+        port=5432,   
         database="mlepinski",
         user="mlepinski",
         password="MyDatabasePassword")
@@ -29,7 +29,7 @@ def test_query_one():
     
     conn = psycopg2.connect(
         host="localhost",
-        port=9999,
+        port=5432,
         database="mlepinski",
         user="mlepinski",
         password="MyDatabasePassword")
@@ -65,7 +65,7 @@ def test_query_all():
     
     conn = psycopg2.connect(
         host="localhost",
-        port=9999,
+        port=5432,
         database="mlepinski",
         user="mlepinski",
         password="MyDatabasePassword")
@@ -100,7 +100,7 @@ def test_query_variable():
 
     conn = psycopg2.connect(
         host="localhost",
-        port=9999,
+        port=5432,
         database="mlepinski",
         user="mlepinski",
         password="MyDatabasePassword")
