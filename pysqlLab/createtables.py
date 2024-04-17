@@ -8,10 +8,10 @@ conn = psycopg2.connect(
         password="chip979bond")
 
   if conn is not None:
-      print( "Connection Worked!" )
+          print( "Connection Worked!" )
   else:
-      print( "Problem with Connection" )
-      return None
+          print( "Problem with Connection" )
+          return None
       
 cur = conn.cursor()
 
