@@ -72,7 +72,8 @@ def main():
 
             sql = "SELECT statename FROM statepopulation WHERE code = %s;"
 
-            cur.execute( sql, state )
+            statedata(state, )
+            cur.execute( sql, statedata )
             
             if cur.fetchone() is not None:
                 state = cur.fetchone()[0]
@@ -84,7 +85,8 @@ def main():
 
         sql = "SELECT citypop FROM topcities WHERE statename = %s;"
 
-        cur.execute( sql, state )
+        statedata(state, )
+        cur.execute( sql, statedata )
 
         list = curr.fetchall()
         
