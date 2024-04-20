@@ -1,0 +1,99 @@
+import psycopg2
+
+def main():
+        conn = psycopg2.connect(
+                host="localhost",
+                port=5432,   
+                database="rapaczs",
+                user="rapaczs",
+                password="chip979bond")
+        
+        if conn is not None:
+                print( "Connection Worked!" )
+        else:
+                print( "Problem with Connection" )
+                return None
+              
+        cur = conn.cursor()
+        # query 1
+        sql = "SELECT city, lat, lon FROM topcities WHERE city = 'Northfield';"
+            
+        cur.execute( sql )
+
+        if cur.fetchone()[0] == 'Northfield' :
+            print "Northfield: latitude = " + cur.fetchone()[1] + "; longitude = " + cur.fetchone()[2] + ";\n"
+        else :
+            print "Northfield is not a top city.\n"
+
+        # query 2
+        sql = "SELECT city FROM topcities ORDER BY pop DESC;"
+            
+        cur.execute( sql )
+        
+        print "Largest population center: " + cur.fetchone()[0] + "\n"
+
+        # query 3
+        sql = "SELECT city FROM topcities WHERE state = 'Minnesota' ORDER BY pop DESC;"
+
+        cur.execute( sql )
+
+        print "The smallest Minnesota city to make the top 1000 US cities: " + cur.fetchone()[0] + "\n"
+
+        # query 4
+        sql = "SELECT city FROM topcities ORDER BY lat DESC;" # get north
+
+        cur.execute( sql )
+
+        northest = cur.fetchone()[0]
+
+        sql = "SELECT city FROM topcities ORDER BY lat;" # get south
+
+        cur.execute( sql )
+
+        southest = cur.fetchone()[0]
+
+        sql = "SELECT city FROM topcities ORDER BY lon DESC;" # get east
+
+        cur.execute( sql )
+
+        eastest = cur.fetchone()[0]
+
+        sql = "SELECT city FROM topcities ORDER BY lon;" # get west
+
+        cur.execute( sql )
+
+        westest = cur.fetchone()[0]
+
+        # query 5
+        state = input("Enter state name or abbreviation:\n")
+
+        if len(state) == 2 # converts abbreviation to
+
+            state = state.upper()
+
+            sql = "SELECT statename FROM statepopulation WHERE code = %s;"
+
+            cur.execute( sql, state )
+            
+            state = cur.fetchone()[0]
+        
+        state = state.capitalize()
+
+        sql = "SELECT citypop FROM topcities WHERE statename = %s;"
+
+        cur.execute( sql, state )
+
+        list = curr.fetchall()
+        
+        tally = 0
+
+        for row in list:
+            tally = tally + row[0]
+
+        print "The population of " + state + " that lives in the top 1000 US cities: " + tally + "\n"
+        
+        return None
+
+# run main
+if __name__ == "__main__":
+        main()
