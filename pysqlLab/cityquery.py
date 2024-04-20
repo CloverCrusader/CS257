@@ -12,6 +12,7 @@ def main():
                 print( "Connection Worked!" )
         else:
                 print( "Problem with Connection" )
+                conn.close()
                 return None
               
         cur = conn.cursor()
@@ -79,6 +80,8 @@ def main():
                 state = cur.fetchone()[0]
             else:
                 print("That is not a valid abbreviation.\n")
+                cur.close()
+                conn.close()
                 return None
         
         state = state.capitalize()
@@ -88,9 +91,9 @@ def main():
         statedata = (state, )
         cur.execute( sql, statedata )
 
-        list = curr.fetchall()
+        list = cur.fetchall()
         
-        if cur.fetall() is not None:
+        if cur.fetchall() is not None:
             tally = 0
 
             for row in list:
@@ -101,6 +104,9 @@ def main():
         else:
             print("That is not a valid state name.\n")
             
+        cur.close()
+        conn.close()
+
         return None
 
 # run main

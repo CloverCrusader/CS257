@@ -12,6 +12,7 @@ def main():
                 print( "Connection Worked!" )
         else:
                 print( "Problem with Connection" )
+                conn.close()
                 return None
               
         cur = conn.cursor()
@@ -20,6 +21,9 @@ def main():
             
         cur.execute( sql )
         
+        cur.close()
+        conn.close()
+
         return None
 
 # run main
