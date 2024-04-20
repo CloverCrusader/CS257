@@ -20,7 +20,7 @@ def main():
             
         cur.execute( sql )
 
-        if cur.fetchone()[0] == 'Northfield' :
+        if cur.fetchone()[0] is not None :
             print("Northfield: latitude = " + cur.fetchone()[1] + "; longitude = " + cur.fetchone()[2] + ";\n")
         else :
             print("Northfield is not a top city.\n")
