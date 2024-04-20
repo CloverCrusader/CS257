@@ -44,25 +44,25 @@ def main():
 
         cur.execute( sql )
 
-        print("Northernmost city in the top 1000: " + cur.fetchone()[0] + cur.fetchone()[1] + "\n")
+        print("Northernmost city in the top 1000: " + cur.fetchone()[0] + ", " + cur.fetchone()[1] + "\n")
 
         sql = "SELECT city, statename FROM topcities ORDER BY lat;" # get south
 
         cur.execute( sql )
 
-        print("Southernmost city in the top 1000: " + cur.fetchone()[0] + cur.fetchone()[1] + "\n")
+        print("Southernmost city in the top 1000: " + cur.fetchone()[0] + ", " + cur.fetchone()[1] + "\n")
 
         sql = "SELECT city, statename FROM topcities ORDER BY lon DESC;" # get east
 
         cur.execute( sql )
 
-        print("Easternmost city in the top 1000: " + cur.fetchone()[0] + cur.fetchone()[1] + "\n")
+        print("Easternmost city in the top 1000: " + cur.fetchone()[0] + ", " + cur.fetchone()[1] + "\n")
 
         sql = "SELECT city, statename FROM topcities ORDER BY lon;" # get west
 
         cur.execute( sql )
 
-        print("Westernmost city in the top 1000: " + cur.fetchone()[0] + cur.fetchone()[1] + "\n")
+        print("Westernmost city in the top 1000: " + cur.fetchone()[0] + ", " + cur.fetchone()[1] + "\n")
 
         # query 5
         state = input("Enter state name or abbreviation:\n")
