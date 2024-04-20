@@ -21,48 +21,48 @@ def main():
         cur.execute( sql )
 
         if cur.fetchone()[0] == 'Northfield' :
-            print "Northfield: latitude = " + cur.fetchone()[1] + "; longitude = " + cur.fetchone()[2] + ";\n"
+            print("Northfield: latitude = " + cur.fetchone()[1] + "; longitude = " + cur.fetchone()[2] + ";\n")
         else :
-            print "Northfield is not a top city.\n"
+            print("Northfield is not a top city.\n")
 
         # query 2
         sql = "SELECT city FROM topcities ORDER BY pop DESC;"
             
         cur.execute( sql )
         
-        print "Largest population center: " + cur.fetchone()[0] + "\n"
+        print("Largest population center: " + cur.fetchone()[0] + "\n")
 
         # query 3
         sql = "SELECT city FROM topcities WHERE state = 'Minnesota' ORDER BY pop DESC;"
 
         cur.execute( sql )
 
-        print "The smallest Minnesota city to make the top 1000 US cities: " + cur.fetchone()[0] + "\n"
-
+        print("The smallest Minnesota city to make the top 1000 US cities: " + cur.fetchone()[0] + "\n")
+        
         # query 4
         sql = "SELECT city FROM topcities ORDER BY lat DESC;" # get north
 
         cur.execute( sql )
 
-        northest = cur.fetchone()[0]
+        print("Northernmost city in the top 1000:" + cur.fetchone()[0] + "\n")
 
         sql = "SELECT city FROM topcities ORDER BY lat;" # get south
 
         cur.execute( sql )
 
-        southest = cur.fetchone()[0]
+        print("Southernmost city in the top 1000:" + cur.fetchone()[0] + "\n")
 
         sql = "SELECT city FROM topcities ORDER BY lon DESC;" # get east
 
         cur.execute( sql )
 
-        eastest = cur.fetchone()[0]
+        print("Easternmost city in the top 1000:" + cur.fetchone()[0] + "\n")
 
         sql = "SELECT city FROM topcities ORDER BY lon;" # get west
 
         cur.execute( sql )
 
-        westest = cur.fetchone()[0]
+        print("Westernmost city in the top 1000:" + cur.fetchone()[0] + "\n")
 
         # query 5
         state = input("Enter state name or abbreviation:\n")
@@ -90,7 +90,7 @@ def main():
         for row in list:
             tally = tally + row[0]
 
-        print "The population of " + state + " that lives in the top 1000 US cities: " + tally + "\n"
+        print("The population of " + state + " that lives in the top 1000 US cities: " + tally + "\n")
         
         return None
 
