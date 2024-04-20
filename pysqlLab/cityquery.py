@@ -99,7 +99,7 @@ def main():
             for row in list:
                 tally = tally + row[0]
 
-            print("The population of " + state + " that lives in the top 1000 US cities: " + str(tally) + "\n")
+            print("The population of " + state + " that lives in the top 1000 US cities: " + str(int(tally)) + "\n")
         
         else:
             print("That is not a valid state name.\n")
