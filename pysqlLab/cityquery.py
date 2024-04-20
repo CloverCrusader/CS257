@@ -33,7 +33,7 @@ def main():
         print("Largest population center: " + cur.fetchone()[0] + "\n")
 
         # query 3
-        sql = "SELECT city FROM topcities WHERE state = 'Minnesota' ORDER BY citypop DESC;"
+        sql = "SELECT city FROM topcities WHERE statename = 'Minnesota' ORDER BY citypop DESC;"
 
         cur.execute( sql )
 
