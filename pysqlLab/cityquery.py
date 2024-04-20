@@ -26,14 +26,14 @@ def main():
             print("Northfield is not a top city.\n")
 
         # query 2
-        sql = "SELECT city FROM topcities ORDER BY pop DESC;"
+        sql = "SELECT city FROM topcities ORDER BY citypop DESC;"
             
         cur.execute( sql )
         
         print("Largest population center: " + cur.fetchone()[0] + "\n")
 
         # query 3
-        sql = "SELECT city FROM topcities WHERE state = 'Minnesota' ORDER BY pop DESC;"
+        sql = "SELECT city FROM topcities WHERE state = 'Minnesota' ORDER BY citypop DESC;"
 
         cur.execute( sql )
 
