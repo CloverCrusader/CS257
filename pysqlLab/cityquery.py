@@ -74,7 +74,11 @@ def main():
 
             cur.execute( sql, state )
             
-            state = cur.fetchone()[0]
+            if cur.fetchone() is not None:
+                state = cur.fetchone()[0]
+            else:
+                print("That is not a valid abbreviation.\n")
+                return None
         
         state = state.capitalize()
 
@@ -84,13 +88,17 @@ def main():
 
         list = curr.fetchall()
         
-        tally = 0
+        if cur.fetall() is not None:
+            tally = 0
 
-        for row in list:
-            tally = tally + row[0]
+            for row in list:
+                tally = tally + row[0]
 
-        print("The population of " + state + " that lives in the top 1000 US cities: " + tally + "\n")
+            print("The population of " + state + " that lives in the top 1000 US cities: " + tally + "\n")
         
+        else:
+            print("That is not a valid state name.\n")
+            
         return None
 
 # run main
