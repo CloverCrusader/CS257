@@ -67,8 +67,7 @@ def main():
         # query 5
         state = input("Enter state name or abbreviation:\n")
 
-        if len(state) == 2
-            # converts abbreviation to statename
+        if len(state) == 2 : # converts abbreviation to statename
             state = state.upper()
 
             sql = "SELECT statename FROM statepopulation WHERE code = %s;"
