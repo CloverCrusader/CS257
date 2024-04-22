@@ -29,10 +29,7 @@ def state_pop(abbrev):
                 user="rapaczs",
                 password="chip979bond")
         
-        if conn is not None:
-                print( "Connection Worked!" )
-        else:
-                print( "Problem with Connection" )
+        if conn is None:
                 conn.close()
                 return None
               
