@@ -47,7 +47,7 @@ def state_pop(abbrev):
         pop = cur.fetchone()[0]
         cur.close()
         conn.close()
-        return pop
+        return str(pop)
     else:
         cur.close()
         conn.close()
