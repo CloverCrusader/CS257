@@ -44,7 +44,7 @@ def state_pop(abbrev):
     cur.execute( sql, statedata )
 
     if cur.fetchone() is not None:
-        pop = cur.fetchone[0]
+        pop = cur.fetchone()[0]
         cur.close()
         conn.close()
         return pop
