@@ -29,28 +29,28 @@ def state_pop(abbrev):
                 user="rapaczs",
                 password="chip979bond")
         
-        if conn is None:
-            conn.close()
-            return None
-              
-        cur = conn.cursor()
+    if conn is None:
+        conn.close()
+        return None
+            
+    cur = conn.cursor()
 
-        abbrev = abbrev.upper()
+    abbrev = abbrev.upper()
 
-        sql = "SELECT pop FROM statepopulation WHERE code = %s;"
+    sql = "SELECT pop FROM statepopulation WHERE code = %s;"
 
-        statedata = (state, )
-        cur.execute( sql, statedata )
+    statedata = (state, )
+    cur.execute( sql, statedata )
 
-        if cur.fetchone() is not None:
-            pop = cur.fetchone[0]
-            cur.close()
-            conn.close()
-            return pop
-        else:
-            cur.close()
-            conn.close()
-            return None
+    if cur.fetchone() is not None:
+        pop = cur.fetchone[0]
+        cur.close()
+        conn.close()
+        return pop
+    else:
+        cur.close()
+        conn.close()
+        return None
 
 if __name__ == '__main__':
     my_port = 5123
