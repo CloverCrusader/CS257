@@ -30,8 +30,8 @@ def state_pop(abbrev):
                 password="chip979bond")
         
         if conn is None:
-                conn.close()
-                return None
+            conn.close()
+            return None
               
         cur = conn.cursor()
 
