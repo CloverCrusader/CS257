@@ -40,7 +40,7 @@ def state_pop(abbrev):
 
     sql = "SELECT pop FROM statepopulation WHERE code = %s;"
 
-    statedata = (state, )
+    statedata = (abbrev, )
     cur.execute( sql, statedata )
 
     if cur.fetchone() is not None:
