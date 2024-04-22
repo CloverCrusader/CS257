@@ -14,7 +14,11 @@ def my_display(word1, word2):
 
 @app.route('/color/<word1>')
 def my_color(word1):
-    return '<h1 style="color:Red">' + word1 + '</h1>'
+    return '<h1 style="color:#121a40">' + word1 + '</h1>'
+
+@app.route('/add/<num1>/<num2>')
+def add_num(num1, num2):
+    return str(int(num1) + int(num2))
 
 @app.route('/pop/<abbrev>')
 def state_pop(abbrev):
