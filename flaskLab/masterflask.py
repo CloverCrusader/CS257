@@ -69,6 +69,10 @@ def rand(low, high):
     num = random.randint(low_int, high_int)
     return flask.render_template("random.html", randNum = num)
 
+@app.route('/random')
+def welcome():
+    return render_template("newrandom.html")
+
 # A frog
 @app.route('/frog')
 def frog():
