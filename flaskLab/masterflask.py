@@ -1,4 +1,6 @@
-import flask
+from flask import Flask
+from flask import render_template
+import random
 import psycopg2
 
 app = flask.Flask(__name__)
