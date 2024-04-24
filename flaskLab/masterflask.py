@@ -67,7 +67,7 @@ def rand(low, high):
     high_int = int(high)
     
     num = random.randint(low_int, high_int)
-    return render_template("random.html", randNum = num)
+    return flask.render_template("random.html", randNum = num)
 
 # A frog
 @app.route('/frog')
