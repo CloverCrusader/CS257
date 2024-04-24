@@ -76,7 +76,7 @@ def welcome():
 # A frog
 @app.route('/frog')
 def frog():
-    return '<img src="frog.png" alt="Thats a good frog.">'
+    return flask.render_template("frog.html")
 
 if __name__ == '__main__':
     my_port = 5123
