@@ -71,12 +71,12 @@ def rand(low, high):
 
 @app.route('/random')
 def welcome():
-    return render_template("newrandom.html")
+    return flask.render_template("newrandom.html")
 
 # A frog
 @app.route('/frog')
 def frog():
-    return '<img src="frog.png" alt="That`s a good frog.">'
+    return '<img src="frog.png" alt="Thats a good frog.">'
 
 if __name__ == '__main__':
     my_port = 5123
