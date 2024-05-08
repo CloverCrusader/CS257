@@ -4,9 +4,7 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def welcome():
-    message = "Welcome to My Example Webpage."
-    message = message + " This text was produced by concatenating strings in Python!"
-    return flask.render_template("homepage.html", someText = message)
+    return flask.render_template("frog.html")
 
 if __name__ == '__main__':
     my_port = 5123
